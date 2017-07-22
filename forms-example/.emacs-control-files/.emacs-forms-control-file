@@ -1,0 +1,38 @@
+;; -*- mode: emacs-lisp -*-
+
+;; This demo visits `/etc/passwd'.
+
+(setq forms-file "../res/data.csv")
+(setq forms-number-of-fields 7)
+(setq forms-read-only t)  ; to make sure
+(setq forms-field-sep ":")
+;; Don't allow multi-line fields.
+(setq forms-multi-line nil)
+
+(setq forms-format-list
+      (list
+       "====== /etc/passwd ======\n\n"
+       "User : "    1
+       "   Uid: "   2
+       "   Gid: "   3
+       "\n\n"
+       "Name : "    4
+       "\n\n"
+       "Home : "    5
+       "\n\n"
+       "Shell: "    6
+       "\n\n"
+       ;; "\n\n"
+       ;; "========== Current Time =========="
+       ;; "\n\n"
+       ;; '(shell-command-to-string "date")
+       "\n"))
+
+(defun my-modified-record-filter (record)
+  ;; Modify second field.
+  (message (format "%S" 'record))
+  ;; (aset record 2 (current-time-string))
+  ;; Return the field vector.
+  record)
+
+(setq forms-modified-record-filter 'my-modified-record-filter)

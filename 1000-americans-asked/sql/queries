@@ -1,0 +1,7 @@
+-- SELECT * FROM survey WHERE answer LIKE "manchester" OR answer LIKE "london";
+
+-- SELECT * FROM survey WHERE answer LIKE "f%u%";
+
+-- SELECT * FROM survey WHERE answer LIKE "b%";
+
+SELECT * FROM survey WHERE answer LIKE "b_r%";

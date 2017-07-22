@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+cat queries | sqlite3 -column survey.sqlite 2>&1 | less -RN

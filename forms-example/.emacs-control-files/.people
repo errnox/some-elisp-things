@@ -1,0 +1,18 @@
+;; -*- mode: emacs-lisp -*-
+
+;; This demo visits `/etc/passwd'.
+
+(setq forms-file "../res/people.csv")
+(setq forms-number-of-fields 4)
+(setq forms-insert-after 't)
+
+(setq forms-format-list
+      (list
+       "====== Person ======\n\n"
+       "First name: "    1
+       "\n\n"
+       "Last name: "     2
+       "\n\n"
+       "Company: "       3
+       "  Category: "      4
+       "\n"))
